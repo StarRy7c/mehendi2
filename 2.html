@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Raju Mehendi Artist</title>
+  <meta name="description" content="Raju Mehendi Artist — bridal mehendi, modern & traditional designs." />
+  <!-- Tailwind Play CDN (fast, no build) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config: extend colors if needed
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandAmber: '#f59e0b',
+            brandEmerald: '#10b981',
+            deep1: '#071422',
+            deep2: '#0f172a',
+            deep3: '#041021'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* small helpers for animation used by JS */
+    .reveal { opacity: 0; transform: translateY(14px) scale(0.995); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0) scale(1); }
+    .reveal-fast { transition-duration: .4s; }
+    /* header backdrop */
+    header { -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  </style>
+</head>
+<body class="antialiased bg-gradient-to-b from-deep1 via-deep2 to-deep3 text-white min-h-screen">
+
+  <!-- constants (for clarity) -->
+  <script>
+    const WHATSAPP_NUMBER = "+919918928267";
+    const WHATSAPP_TEXT = encodeURIComponent("Hi Raju Mehendi Artist, I would like to book a mehendi appointment. Please share availability and prices.");
+    const WHATSAPP_LINK = `https://wa.me/919918928267?text=${WHATSAPP_TEXT}`;
+    const TEL_LINK = `tel:+919918928267`;
+    const EMAIL = "rajumehendiartist3@gmail.com";
+    const SOCIAL_USERNAME = "rajumehendiartist";
+  </script>
+
+  <!-- Header -->
+  <header class="fixed inset-x-4 top-4 z-50 rounded-3xl shadow-2xl border border-white/6 bg-white/6 p-3">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <div class="flex items-center gap-4">
+        <!-- Inline SVG Logo -->
+        <svg viewBox="0 0 300 80" class="w-36 h-auto" aria-label="Raju Mehendi Artist logo" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <rect width="300" height="80" rx="12" fill="url(#g)"/>
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f59e0b"/>
+              <stop offset="1" stop-color="#10b981"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(18,14)">
+            <path d="M10 48 C 22 20, 62 12, 80 40 C 98 68, 130 62, 142 40" stroke="#08203a" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <text x="0" y="64" font-family="Poppins, Inter, system-ui" font-weight="700" font-size="20" fill="#08203a">Raju Mehendi Artist</text>
+          </g>
+        </svg>
+      </div>
+
+      <nav id="mainNav" class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="#home" class="hover:underline">Home</a>
+        <a href="#services" class="hover:underline">Services</a>
+        <a href="#about" class="hover:underline">About</a>
+        <a href="/gallery" class="hover:underline">Gallery</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+        <a id="whatsHeader" href="#" class="ml-2 inline-block px-3 py-2 rounded-xl bg-amber-500/90 hover:scale-105">WhatsApp</a>
+      </nav>
+
+      <div class="md:hidden flex items-center">
+        <a id="whatsMob" href="#" class="inline-block px-3 py-2 rounded-xl bg-amber-500/90">WhatsApp</a>
+        <button id="menuBtn" class="ml-3 p-2 rounded-lg bg-white/6 md:hidden" aria-label="toggle menu">☰</button>
+      </div>
+    </div>
+    <!-- Mobile nav -->
+    <div id="mobileNav" class="md:hidden mt-3 hidden">
+      <div class="flex flex-col gap-2 p-2">
+        <a href="#home" class="block p-2 rounded-lg hover:bg-white/5">Home</a>
+        <a href="#services" class="block p-2 rounded-lg hover:bg-white/5">Services</a>
+        <a href="#about" class="block p-2 rounded-lg hover:bg-white/5">About</a>
+        <a href="/gallery" class="block p-2 rounded-lg hover:bg-white/5">Gallery</a>
+        <a href="#contact" class="block p-2 rounded-lg hover:bg-white/5">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-28">
+    <!-- HERO -->
+    <section id="home" class="max-w-6xl mx-auto px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl md:text-6xl leading-tight font-extrabold tracking-tight reveal reveal-fast">Transforming Hands into <span class="text-amber-400">Living Art</span></h1>
+          <p class="mt-6 text-lg text-slate-200 max-w-xl reveal">Raju Mehendi Artist — elegant bridal mehendi, traditional and modern designs, and custom creations for every celebration. Serving clients with care, creativity, and clean professional service.</p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 reveal">
+            <a id="heroWhats" href="#" class="inline-flex items-center gap-3 px-5 py-3 rounded-2xl font-semibold shadow-lg bg-gradient-to-r from-amber-500 to-emerald-500 text-white transform transition hover:scale-105">📱 Book via WhatsApp</a>
+            <a href="/gallery" class="inline-flex items-center gap-3 px-5 py-3 rounded-2xl font-semibold shadow-lg bg-white/10">View Gallery</a>
+          </div>
+
+          <div class="mt-8 flex items-center gap-6 reveal">
+            <div>
+              <div class="text-slate-300 text-sm">Call / WhatsApp</div>
+              <a class="text-white font-semibold text-lg" href="tel:+919918928267">+91 99189 28267</a>
+            </div>
+
+            <div class="hidden sm:block border-l border-white/10 pl-6">
+              <div class="text-slate-300 text-sm">Email</div>
+              <a class="text-white font-medium" href="mailto:rajumehendiartist3@gmail.com">rajumehendiartist3@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-3xl bg-white/3 p-6 backdrop-blur-sm shadow-2xl reveal">
+          <div class="relative overflow-hidden rounded-2xl">
+            <img src="https://via.placeholder.com/900x600?text=Elegant+Mehendi+Preview" alt="Mehendi preview" class="w-full h-auto object-cover rounded-2xl" />
+            <div class="absolute left-6 bottom-6 bg-gradient-to-r from-amber-500 to-emerald-500 text-slate-900 px-4 py-2 rounded-full font-semibold shadow-lg">Bridal Special</div>
+          </div>
+
+          <div class="mt-4 grid grid-cols-3 gap-3">
+            <img src="https://via.placeholder.com/200x140?text=Design+1" class="w-full h-28 object-cover rounded-xl shadow-inner" alt="design1" />
+            <img src="https://via.placeholder.com/200x140?text=Design+2" class="w-full h-28 object-cover rounded-xl shadow-inner" alt="design2" />
+            <img src="https://via.placeholder.com/200x140?text=Design+3" class="w-full h-28 object-cover rounded-xl shadow-inner" alt="design3" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="mt-24">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <h2 class="text-3xl font-bold reveal">Our Specialties</h2>
+        <p class="mt-2 text-slate-300 max-w-xl reveal">Bridal, Arabic, Rajasthani, Minimalist and Custom designs crafted with precision.</p>
+
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="p-6 rounded-2xl bg-white/4 border border-white/6 reveal">
+            <div class="text-amber-300 font-semibold">Bridal Mehendi</div>
+            <div class="mt-2 text-slate-200">Full bridal hands & arms with intricate motifs.</div>
+            <div class="mt-4"><a href="/gallery" class="text-amber-300 font-medium">See designs →</a></div>
+          </div>
+          <div class="p-6 rounded-2xl bg-white/4 border border-white/6 reveal">
+            <div class="text-amber-300 font-semibold">Arabic Style</div>
+            <div class="mt-2 text-slate-200">Bold outlines, floral trails and modern flow.</div>
+            <div class="mt-4"><a href="/gallery" class="text-amber-300 font-medium">See designs →</a></div>
+          </div>
+          <div class="p-6 rounded-2xl bg-white/4 border border-white/6 reveal">
+            <div class="text-amber-300 font-semibold">Traditional / Rajasthani</div>
+            <div class="mt-2 text-slate-200">Cultural patterns and bridal storytelling.</div>
+            <div class="mt-4"><a href="/gallery" class="text-amber-300 font-medium">See designs →</a></div>
+          </div>
+          <div class="p-6 rounded-2xl bg-white/4 border border-white/6 reveal">
+            <div class="text-amber-300 font-semibold">Leg & Feet</div>
+            <div class="mt-2 text-slate-200">Stylish ankle, foot and leg patterns for events.</div>
+            <div class="mt-4"><a href="/gallery" class="text-amber-300 font-medium">See designs →</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="mt-24">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <h3 class="text-2xl font-bold reveal">About Raju</h3>
+            <p class="mt-3 text-slate-300 reveal">Raju is a passionate mehendi artist with over a decade of experience decorating brides and guests across ceremonies. Combining traditional patterns with modern sensibilities, he ensures clean application, long-lasting stains, and custom motifs that tell your story. Raju is available for local bookings and travel for events.</p>
+
+            <div class="mt-6 flex gap-4 reveal">
+              <a href="#" id="aboutWhats" class="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-amber-500/90">WhatsApp</a>
+              <a href="tel:+919918928267" class="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-white/6">Call</a>
+            </div>
+          </div>
+
+          <div class="rounded-2xl bg-white/4 p-4 reveal">
+            <img src="https://via.placeholder.com/720x540?text=Raju+with+brush" alt="Raju" class="rounded-xl w-full h-auto object-cover shadow-lg" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MINI GALLERY -->
+    <section id="mini-gallery" class="mt-24">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <h4 class="text-2xl font-bold reveal">Selected Designs</h4>
+        <p class="text-slate-300 mt-2 reveal">A few hand-picked designs. Browse the full gallery for category-wise collections.</p>
+
+        <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div class="rounded-xl overflow-hidden bg-white/3 reveal"><img src="https://via.placeholder.com/400x400?text=Design+1" class="w-full h-36 object-cover" alt="design-1" /></div>
+          <div class="rounded-xl overflow-hidden bg-white/3 reveal"><img src="https://via.placeholder.com/400x400?text=Design+2" class="w-full h-36 object-cover" alt="design-2" /></div>
+          <div class="rounded-xl overflow-hidden bg-white/3 reveal"><img src="https://via.placeholder.com/400x400?text=Design+3" class="w-full h-36 object-cover" alt="design-3" /></div>
+          <div class="rounded-xl overflow-hidden bg-white/3 reveal"><img src="https://via.placeholder.com/400x400?text=Design+4" class="w-full h-36 object-cover" alt="design-4" /></div>
+          <div class="rounded-xl overflow-hidden bg-white/3 reveal"><img src="https://via.placeholder.com/400x400?text=Design+5" class="w-full h-36 object-cover" alt="design-5" /></div>
+          <div class="rounded-xl overflow-hidden bg-white/3 reveal"><img src="https://via.placeholder.com/400x400?text=Design+6" class="w-full h-36 object-cover" alt="design-6" /></div>
+        </div>
+
+        <div class="mt-6 reveal">
+          <a href="/gallery" class="text-amber-300 font-semibold">View more designs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="mt-24">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <h5 class="text-2xl font-bold reveal">What clients say</h5>
+        <p class="text-slate-300 mt-2 reveal">Real words from happy brides and family members.</p>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <blockquote class="p-6 bg-white/4 rounded-2xl reveal">
+            <p class="text-slate-200">“Raju made my wedding so special — the mehendi lasted long and looked stunning.”</p>
+            <footer class="mt-3 text-amber-300 font-semibold">— Anita Sharma</footer>
+          </blockquote>
+          <blockquote class="p-6 bg-white/4 rounded-2xl reveal">
+            <p class="text-slate-200">“Professional, on-time and the designs were beyond expectations.”</p>
+            <footer class="mt-3 text-amber-300 font-semibold">— Priya K</footer>
+          </blockquote>
+          <blockquote class="p-6 bg-white/4 rounded-2xl reveal">
+            <p class="text-slate-200">“Beautiful motifs and great hygiene. Highly recommended.”</p>
+            <footer class="mt-3 text-amber-300 font-semibold">— Sonal & Team</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="mt-24 pb-36">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div>
+          <h6 class="text-2xl font-bold reveal">Book Raju for your event</h6>
+          <p class="mt-2 text-slate-300 reveal">Quick call or WhatsApp to confirm date and package. If you prefer, email the details and we will respond promptly.</p>
+
+          <div class="mt-6 flex flex-col gap-4 reveal">
+            <a href="#" id="contactWhats" class="w-full inline-flex items-center justify-center gap-3 px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-500 to-emerald-500 text-slate-900 font-semibold">Message on WhatsApp</a>
+            <a href="tel:+919918928267" class="w-full inline-flex items-center justify-center gap-3 px-6 py-3 rounded-2xl bg-white/6">Call +91 99189 28267</a>
+            <a href="mailto:rajumehendiartist3@gmail.com" class="w-full inline-flex items-center justify-center gap-3 px-6 py-3 rounded-2xl bg-white/6">Email: rajumehendiartist3@gmail.com</a>
+          </div>
+
+          <div class="mt-8 reveal">
+            <div class="text-slate-300">Follow on</div>
+            <div class="mt-3 flex gap-3">
+              <a href="https://instagram.com/rajumehendiartist" aria-label="Instagram" class="p-2 rounded-lg bg-white/6">Instagram</a>
+              <a href="https://facebook.com/rajumehendiartist" aria-label="Facebook" class="p-2 rounded-lg bg-white/6">Facebook</a>
+              <a href="https://youtube.com/rajumehendiartist" aria-label="YouTube" class="p-2 rounded-lg bg-white/6">YouTube</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-white/4 p-6 reveal">
+          <form onsubmit="event.preventDefault(); alert('Demo form — for real site use Formspree, Netlify Forms or other service.');" class="grid gap-4">
+            <input class="p-3 rounded-xl bg-white/6" placeholder="Your name" required />
+            <input class="p-3 rounded-xl bg-white/6" placeholder="Phone (optional)" />
+            <textarea class="p-3 rounded-xl bg-white/6" placeholder="Message — event details, date, location" rows="5"></textarea>
+            <div class="flex gap-3">
+              <button class="px-4 py-3 rounded-xl bg-amber-500/90 font-semibold">Send Message</button>
+              <a href="#" id="formWhats" class="px-4 py-3 rounded-xl bg-white/6">Message on WhatsApp</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-24 py-8 border-t border-white/6 text-center">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-4 justify-center">
+          <!-- small logo -->
+          <svg viewBox="0 0 300 80" class="w-28 h-auto" aria-hidden xmlns="http://www.w3.org/2000/svg" fill="none">
+            <rect width="300" height="80" rx="12" fill="url(#g2)"/>
+            <defs>
+              <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f59e0b"/>
+                <stop offset="1" stop-color="#10b981"/>
+              </linearGradient>
+            </defs>
+            <g transform="translate(18,14)">
+              <path d="M10 48 C 22 20, 62 12, 80 40 C 98 68, 130 62, 142 40" stroke="#08203a" stroke-width="4" stroke-linecap="round" fill="none"/>
+            </g>
+          </svg>
+          <div class="text-sm text-slate-300">© <span id="year"></span> Raju Mehendi Artist</div>
+        </div>
+
+        <div class="text-sm text-slate-300">Designed for modern web • Contact: <a href="tel:+919918928267" class="text-white font-medium">+91 99189 28267</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- small JS: nav toggle, whatsapp links, reveal on scroll -->
+  <script>
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        mobileNav.classList.toggle('hidden');
+      });
+    }
+
+    // attach WhatsApp links to multiple buttons
+    const WA = `https://wa.me/919918928267?text=${encodeURIComponent("Hi Raju Mehendi Artist, I would like to book a mehendi appointment. Please share availability and prices.")}`;
+    ['whatsHeader','whatsMob','heroWhats','aboutWhats','contactWhats','formWhats'].forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.setAttribute('href', WA);
+    });
+
+    // simple reveal-on-scroll using IntersectionObserver
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('show'); obs.unobserve(e.target); }
+      });
+    },{threshold: 0.12});
+    reveals.forEach(r => obs.observe(r));
+  </script>
+</body>
+</html>
