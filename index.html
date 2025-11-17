@@ -574,54 +574,37 @@
                 </div>
             <div class="o_grid_item g-height-1 o_colored_level g-col-lg-3 col-lg-3" style="z-index: 8; grid-area: 16 / 4 / 17 / 7;"><a href="/mehandi-arts" class="btn btn-secondary"><span class="base-fs"><strong>& More ...</strong></span></a><strong><br></strong></div></div>
         </div>
-    </section><section class="s_numbers_list o_cc o_cc1 o_colored_level pt32 pb32" data-snippet="s_numbers_list" data-name="Numbers list">
-        <div class="container">
-            <div class="row s_nb_column_fixed">
-                <div class="col-lg-5 pb32 o_colored_level">
-                    <h3>Highlights of Our Mehndi Creations</h3>
-                    <p><br>From client satisfaction to creative expression and event enhancement, our achievements reflect our commitment to exceptional mehndi artistry.</p></div>
-                <div class="col-12 col-lg-3 offset-lg-1 o_colored_level">
-                    <p>
-                        <span class="h2-fs">80%</span><br> Repeat Clients
-                    </p>
-                    <div class="s_hr pt16 pb40" data-snippet="s_hr" data-name="Separator">
-                        <hr class="w-100 mx-auto">
-                    </div>
-                    <p>
-                        <span class="h2-fs">30+</span><br>Years Experience</p>
-                    <div class="s_hr pt16 pb40" data-snippet="s_hr" data-name="Separator">
-                        <hr class="w-100 mx-auto">
-                    </div>
-                    <p>
-                        <span class="h2-fs">90%</span><br> Client Satisfaction
-                    </p>
-                    <div class="s_hr pt16 pb40" data-snippet="s_hr" data-name="Separator">
-                        <hr class="w-100 mx-auto">
-                    </div>
-                </div>
-                <div class="col-12 col-lg-3 o_colored_level">
-                    <p>
-                        <span class="h2-fs">100,000</span><br> Happy clients
-                    </p>
-                    <div class="s_hr pt16 pb40" data-snippet="s_hr" data-name="Separator">
-                        <hr class="w-100 mx-auto">
-                    </div>
-                    <p>
-                        <span class="h2-fs">100+</span><br> Events adorned
-                    </p>
-                    <div class="s_hr pt16 pb40" data-snippet="s_hr" data-name="Separator">
-                        <hr class="w-100 mx-auto">
-                    </div>
-                    <p>
-                        <span class="h2-fs">4x</span><br> Design variety
-                    </p>
-                    <div class="s_hr pt16 pb40" data-snippet="s_hr" data-name="Separator">
-                        <hr class="w-100 mx-auto">
-                    </div>
-                </div>
-            </div>
+    </section><section class="s_numbers_list compact o_colored_level pt16 pb16">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-4">
+        <h3 style="margin:0;">Our Highlights</h3>
+        <p style="margin:6px 0 0 0; color:#666;">Short, trusted stats — real clients, real experience.</p>
+      </div>
+
+      <div class="col-12 col-lg-8">
+        <div class="row">
+          <div class="col-6 col-md-3 text-center py-2">
+            <div class="stat-num">80%</div>
+            <div class="stat-label">Repeat clients</div>
+          </div>
+          <div class="col-6 col-md-3 text-center py-2">
+            <div class="stat-num">100k</div>
+            <div class="stat-label">Happy clients</div>
+          </div>
+          <div class="col-6 col-md-3 text-center py-2">
+            <div class="stat-num">30+</div>
+            <div class="stat-label">Years</div>
+          </div>
+          <div class="col-6 col-md-3 text-center py-2">
+            <div class="stat-num">4x</div>
+            <div class="stat-label">Designs</div>
+          </div>
         </div>
-    </section><section class="s_title pb40 o_colored_level pt24" data-vcss="001" data-snippet="s_title" data-name="Title">
+      </div>
+    </div>
+  </div>
+</section><section class="s_title pb40 o_colored_level pt24" data-vcss="001" data-snippet="s_title" data-name="Title">
         <div class="container s_allow_columns">
             <h2 style="text-align: left;">
         Unique Mehndi Artistry <br>that reflects your Personal Style
@@ -800,4 +783,45 @@ Baba Ji Deja Vu, 17/5A, Behind Police Booth 18, Main Market, Tilak Nagar, New De
             </script>
         
         
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const counters = document.querySelectorAll('.stat-num');
+    const speed = 200; // The lower the slower
+
+    const animateCount = (counter) => {
+        const target = +counter.innerText.replace(/[^0-9]/g, '');
+        const suffix = counter.innerText.replace(/[0-9]/g, '');
+        let count = 0;
+        
+        const updateCount = () => {
+            const inc = target / speed;
+            count += inc;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count) + suffix;
+                setTimeout(updateCount, 1);
+            } else {
+                counter.innerText = target + suffix;
+            }
+        };
+        updateCount();
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCount(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        rootMargin: '0px',
+        threshold: 0.1
+    });
+
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
+});
+</script>
 </body></html>
